@@ -19,6 +19,7 @@
             <a href="#about" style="--i:2">About</a>
             <a href="#services" style="--i:3">Services</a>
             <a href="#skill" style="--i:4">Skill</a>
+            <a href="#skill" onclick="openResume()"  style="--i:4">Resume</a>
             <a href="#contact" style="--i:5">Contact</a>
 
         </nav>
@@ -37,7 +38,9 @@
                 <a href="https://www.linkedin.com/in/sugil-s-215711204/" style="--i:9"> <i class='bx bxl-linkedin'></i></a>
                 <a href="https://twitter.com/Sugil13" style="--i:10"> <i class='bx bxl-twitter'></i></a>
             </div>
-            <a href="#" class="btn-box">More About Me</a>
+            <!-- <a href="#" class="btn-box">More About Me</a> -->
+            <button onclick="openResume()" class="read">View My Resume</button>
+
         </div>
         </div>
         <span class="home-imgHover"></span>
@@ -332,37 +335,45 @@
 
     <section class="contact" id="contact">
         <div class="contact-text">
-            <h2> Contact<span> Me</span></h2>
-            <h3> <span> </span></h2>
-            <!-- <h4>Let's work Together</h4>
-            <p></p> -->
-           
+            <h2>Contact <span>Me</span></h2>
+            <h3>Let's Work Together</h3>
+    
             <div class="contact-icons">
-                <a href=""><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://www.instagram.com/sugil_santhosh/"><i class='bx bxl-instagram'></i></a>
-                <a href=""><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.linkedin.com/in/sugil-s-215711204/"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/sugil_santhosh/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
             </div>
-             <div class="contact-list">
-                <li><i class='bx bxs-send'></i><a href="">sugilsanthosh243@gmail.com</a> </li>
-                <li><i class='bx bx-phone-call'></i>8072078586</li>
-            </div>
+    
+            <ul class="contact-list">
+                <li><i class='bx bxs-send'></i> <a href="mailto:sugilsanthosh243@gmail.com">sugilsanthosh243@gmail.com</a></li>
+                <li><i class='bx bx-phone-call'></i> <a href="tel:+918072078586">+91 80720 78586</a></li>
+            </ul>
         </div>
+    
         <div class="contact-form">
-            <form action="">
-                <input type="" placeholder="Enter Name" required>
-                <input type="email" placeholder="Enter Email" required>
-                <input type="" placeholder="Enter Your Subject.">
-                <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
-
-                <input type=" submit" value="submit" class="send">
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+                <input type="text" name="subject" placeholder="Enter Your Subject">
+                <textarea name="message" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+                <button type="submit" class="send">Submit</button>
             </form>
         </div>
     </section>
-    <div class="last-text">
-        <p>Developed  by SUGIL S &copy; 2025</p>
+    <div id="resumeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeResume()">&times;</span>
+            <iframe src="SUGIL -AI-ML Analyst Resume.pdf" width="100%" height="500px"></iframe>
+        </div>
     </div>
+    
+    <div class="last-text">
+        <p>Developed by SUGIL S &copy; 2025</p>
+    </div>
+    
     <a href="#" class="top"><i class='bx bxs-up-arrow'></i></a>
+    
 
 
 
