@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -334,7 +335,7 @@
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <!-- <section class="contact" id="contact">
         <div class="contact-text">
             <h2>Contact <span>Me</span></h2>
             <h3>Let's Work Together</h3>
@@ -360,6 +361,35 @@
                 <textarea name="message" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
                 <button type="submit" class="send">Submit</button>
             </form>
+        </div>
+    </section> -->
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me</span></h2>
+            <h3>Let's Work Together</h3>
+
+            <div class="contact-icons">
+                <a href="#" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/sugil_santhosh/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+
+            <ul class="contact-list">
+                <li><i class='bx bxs-send'></i> <a href="mailto:sugilsanthosh243@gmail.com">sugilsanthosh243@gmail.com</a></li>
+                <li><i class='bx bx-phone-call'></i> <a href="tel:+918072078586">+91 80720 78586</a></li>
+            </ul>
+        </div>
+
+        <div class="contact-form">
+            <form id="contact-form">
+                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+                <input type="text" name="subject" id="subject" placeholder="Enter Your Subject">
+                <textarea name="message" id="message" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+                <button type="submit" class="send">Submit</button>
+            </form>
+            <p id="status-message"></p>
         </div>
     </section>
     <div id="resumeModal" class="modal">

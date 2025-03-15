@@ -791,6 +791,10 @@ section
     font-size: 28px;
     cursor: pointer;
 }
+#status-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
 
 
 /* ......................................................... */
