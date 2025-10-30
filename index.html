@@ -1,414 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sugil S - AI/ML Analyst</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Scripts -->
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
-
 <body>
-    <header class="header">
-        <a href="#" class="logo">Port<span style="color: #00eeff;">Folio</span></a>
-
-        <nav class="navbar">
-            <a href="#home" style="--i:1">Home</a>
-            <a href="#about" style="--i:2">About</a>
-            <a href="#services" style="--i:3">Services</a>
-            <a href="#skill" style="--i:4">Skill</a>
-            <a href="#skill" onclick="openResume()"  style="--i:4">Resume</a>
-            <a href="#contact" style="--i:5">Contact</a>
-
-        </nav>
-    </header>
-    <section class="home">
-
-        <div class="home-content">
-            <h3>Hello! It's Me</h3>
-            <h1>SUGIL S</h1>
-            <h3>And I'm a <span class="text"></span></h3>
-            <p>I am an MCA graduate (2023) with a strong foundation in full-stack development, AI/ML, and cloud automation. I have 1.4 years of experience working at Avasoft, where I transitioned from a full-stack developer to an AI/ML Analyst. My technical skills include programming languages like Java, C, and Python, along with expertise in database management, web development, software design, and cloud-based automation.</p>
-
-            <div class=" home-sci">
-                <a href="https://www.facebook.com/girija.santhosh.14" style="--i:7"> <i class='bx bxl-facebook'></i></a>
-                <a href="https://www.instagram.com/sugil_santhosh/" style="--i:8"> <i class='bx bxl-instagram'></i></a>
-                <a href="https://www.linkedin.com/in/sugil-s-215711204/" style="--i:9"> <i class='bx bxl-linkedin'></i></a>
-                <a href="https://twitter.com/Sugil13" style="--i:10"> <i class='bx bxl-twitter'></i></a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">SUGIL<span>.dev</span></a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link"><i class='bx bx-home-alt'></i> Home</a>
+                <a href="#about" class="nav-link"><i class='bx bx-user'></i> About</a>
+                <a href="#experience" class="nav-link"><i class='bx bx-briefcase'></i> Experience</a>
+                <a href="#skills" class="nav-link"><i class='bx bx-code-alt'></i> Skills</a>
+                <a href="#projects" class="nav-link"><i class='bx bx-folder'></i> Projects</a>
+                <a href="#contact" class="nav-link"><i class='bx bx-message-dots'></i> Contact</a>
             </div>
-            <!-- <a href="#" class="btn-box">More About Me</a> -->
-            <button onclick="openResume()" class="read">View My Resume</button>
-
+            <button class="resume-btn" onclick="openResume()">
+                <i class='bx bx-download'></i> Resume
+            </button>
         </div>
-        </div>
-        <span class="home-imgHover"></span>
-    </section>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-greeting">Hello, I'm</span>
+                    <h1 class="hero-name">Sugil S</h1>
+                    <div class="hero-role">
+                        <span class="role-text">I'm a </span>
+                        <span class="text"></span>
+                    </div>
+                    <p class="hero-description">
+                        AI and ML Analyst with hands-on experience in developing and deploying AI-driven solutions. 
+                        Proficient in machine learning techniques, cloud-based services, and full-stack development 
+                        with expertise in AWS, Azure, and modern web technologies.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <i class='bx bx-calendar'></i>
+                            <div class="stat-info">
+                                <h3>2+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class='bx bx-bulb'></i>
+                            <div class="stat-info">
+                                <h3>7+</h3>
+                                <p>Major Projects</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class='bx bx-code-block'></i>
+                            <div class="stat-info">
+                                <h3>20+</h3>
+                                <p>Technologies</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class='bx bx-send'></i> Get In Touch
+                        </a>
+                        <a href="#projects" class="btn btn-outline">
+                            <i class='bx bx-briefcase'></i> View Projects
+                        </a>
+                    </div>
 
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="sugil-hd.jpg">
-        </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" class="social-link" title="LinkedIn">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                        <a href="https://github.com/sugils" target="_blank" class="social-link" title="GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a href="https://sugils.github.io/Sugil-Profile/" target="_blank" class="social-link" title="Portfolio">
+                            <i class='bx bx-globe'></i>
+                        </a>
+                        <a href="mailto:sugilsanthosh243@gmail.com" class="social-link" title="Email">
+                            <i class='bx bx-envelope'></i>
+                        </a>
+                    </div>
+                </div>
 
-        <div class="about-text">
-            <h2>ABOUT <span>ME</span></h2>
-            <h4>AI/ML Analyst</h4>
-            <p>Hi, I'm Sugil, an MCA graduate from 2023 with a BCA background (2021).  
-                <br>I have a strong foundation in Computer Applications and software development, enabling me to work across multiple domains, including full-stack development, AI/ML, and cloud automation.  
-            </p>
-            
-            <p>I began my professional journey at<b> Avasoft </b>as a full-stack developer, designing and building scalable web applications using Python, React, and SQL.  
-                <br>Over time, I transitioned into an <b>AI/ML Analyst role</b>, gaining 1.4 years of experience working with artificial intelligence and machine learning technologies.  
-            </p>
-            
-            <p>During my tenure, I have worked extensively on AI-driven solutions, particularly focusing on <b>Retrieval-Augmented Generation (RAG), similarity search, and Generative AI models</b>.  
-                <br>I have successfully completed four major projects leveraging cutting-edge AI technologies, including OpenAI, Claude, and AWS Bedrock, to develop innovative solutions that enhance automation, data processing, and decision-making capabilities.  
-            </p>
-            
-            <p>My experience spans the entire AI/ML development cycle, from data preprocessing and model training to optimization and deployment in real-world applications.  
-                <br>Additionally, I have expertise in cloud architecture automation, working with AWS and Azure to streamline workflows, optimize resource management, and implement cost-efficient AI-powered solutions.  
-            </p>
-            <p>
-                I am passionate about leveraging AI and cloud automation to drive innovation, solve complex problems, and improve efficiency across industries. I continuously strive to learn and adapt to new technologies, ensuring that I stay at the forefront of advancements in AI, machine learning, and cloud computing.
-            </p>
-            
-            <!-- <a href="#" class="btn-box">More About Me</a> -->
-        </div>
-
-    </section>
-
-    <section>
-        <div class="services" id="skill">
-            <div class="container">
-                <h1 class="sub-title">My<span>SKils</span></h1>
-                <div class="services-list">
-                    <div>
-                        <i class='bx bxl-python' style='color:#00eeff'></i>
-                        <h2>Python</h2>
-                        <p>
-                            During my tenure, I have worked with Python for two years, utilizing technologies and libraries such as Django, Flask, NumPy, Pandas, TensorFlow, and OpenAI APIs. My experience includes web development, AI/ML model development, and cloud automation, 
-                            leveraging Python’s powerful ecosystem to build scalable and efficient solutions.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="sugil-image-1.png" alt="Sugil S">
+                        <div class="image-border"></div>
                     </div>
-                    
-                    
-
-                    <div>
-                        <i class='bx bxl-java' style='color:#00eeff'></i>
-                        <h2>JAVA</h2>
-                        <p>
-                            I learned Java during my college years, where I gained a strong theoretical foundation in object-oriented programming (OOP), data structures, algorithms, multithreading, and exception handling. My coursework and projects helped me understand core Java concepts, including collections, JDBC, and design patterns.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    <div>
-                        <i class='bx bxl-react' style='color:#00eeff'></i>
-                        <h2>ReactJS</h2>
-                        <p>
-                            I have worked with React.js for frontend development, where I built a fully functional web application utilizing React’s component-based architecture. My experience includes working with React Hooks, such as useState,useEffect,useContext to manage state and lifecycle methods efficiently.
-                            I have also worked with React Router, context API, and REST API integrations, ensuring seamless user experiences in dynamic web applications. 
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    <div>
-                        <i class='bx bxs-chip' style='color:#00eeff'></i>
-
-                        <h2>Artificial Intelligence</h2>
-                        <p>
-                            I have worked extensively in the AI/ML domain, focusing on Retrieval-Augmented Generation (RAG), similarity search, and Generative AI models. During my tenure, I have built AI-driven solutions leveraging technologies like OpenAI, Claude, and AWS Bedrock. My experience includes developing, training, and optimizing AI/ML models, working with frameworks such as TensorFlow, PyTorch, and scikit-learn, 
-                            and integrating AI solutions into real-world applications to enhance automation, data processing, and decision-making.
-                            
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    <div>
-                        <i class='bx bx-data' style='color:#00eeff'></i>
-                        <h2>SQL</h2>
-                        <p>
-                            I have experience with SQL, including MySQL, SQL Server, and PostgreSQL, for database management and optimization. Additionally, I have worked with Vector Databases like PGVector for AI-driven applications, enabling efficient similarity search and Retrieval-Augmented Generation (RAG).
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    <div>
-                        <i class='bx bxl-c-plus-plus bx bxl-c'  style='color:#00eeff'></i>
-                        <h2>C & C++</h2>
-                        <p>
-                            I have basic practical experience and intermediate-level theoretical knowledge in C and C++. 
-                            My understanding includes core programming concepts such as data structures, algorithms, object-oriented programming, and memory management.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    <div>
-                        <i class='bx bxl-html5' style='color:#00eeff'></i>
-                        <h2>HTML</h2>
-                        <p>
-                            I have hands-on experience working with HTML during my time at Avasoft. 
-                            I have built and structured web pages efficiently, ensuring proper semantic markup and responsive design.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    <div>
-                        <i class='bx bxl-css3' style='color:#00eeff'></i>
-                        <h2>CSS</h2>
-                        <p>
-                            I have practical experience in CSS from my work at Avasoft, where I styled and designed web applications. 
-                            My experience includes working with Flexbox, Grid, animations, and responsive design principles.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    <div>
-                        <i class='bx bxl-javascript' style='color:#00eeff'></i>
-                        <h2>JavaScript</h2>
-                        <p>
-                            At Avasoft, I worked extensively with JavaScript, implementing interactive and dynamic UI components. 
-                            I have experience with ES6+, DOM manipulation, event handling, and integrating JavaScript with frameworks.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    <div>
-                        <i class='bx bxl-android' style='color:#00eeff'></i>
-                        <h2>Android</h2>
-                        <p>
-                            I have a basic understanding of Android development, including app structure, UI design, and activity lifecycle. 
-                            I have explored Android Studio and Java/Kotlin-based mobile development concepts.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    <div>
-                        <i class='bx bxl-aws' style='color:#00eeff'></i>
-                        <h2>AWS</h2>
-                        <p>
-                            I have experience  of AWS and have worked with AI models on AWS platforms. 
-                            My experience includes using AWS Bedrock, Lambda, S3, and EC2 for deploying and managing AI-driven solutions.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    <div>
-                        <i class='bx bxl-microsoft' style='color:#00eeff'></i>
-                        <h2>Azure</h2>
-                        <p>
-                            I have experience with Azure and have utilized its AI services for implementing Generative AI solutions. 
-                            My work involved using Azure OpenAI, Cognitive Services, and Azure ML for AI-powered applications.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                 
-                    
-                    
-                
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="services" id="services">
-            <div class="container">
-                <h1 class="sub-title">My<span>Services</span></h1>
-                <div class="services-list">
-                    <div>
-                        <i class='bx bx-chip' style='color:#00eeff'></i>
-                        <h2>AI/ML Analyst</h2>
-                        <p>
-                            I have 1.4 years of experience as an AI/ML Analyst, working on AI-driven solutions including Retrieval-Augmented Generation (RAG), similarity search, and Generative AI models.  
-                            I have successfully implemented AI solutions using OpenAI, Claude, and AWS Bedrock, optimizing automation, data processing, and decision-making.  
-                            My expertise spans data preprocessing, model training, optimization, and real-world deployment of AI/ML models.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    <div>
-                        <i class='bx bx-brain' style='color:#00eeff'></i>
-                        <h2>Generative AI Developer</h2>
-                        <p>
-                            I have hands-on experience working with Generative AI models, focusing on Retrieval-Augmented Generation (RAG), similarity search, and LLM-based applications.  
-                            I have successfully implemented AI-driven solutions using OpenAI, Claude, and AWS Bedrock, integrating these models into real-world applications for automation, data processing, and intelligent decision-making.  
-                            My work includes fine-tuning, deploying, and optimizing AI models to enhance performance and scalability.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    <div>
-                        <i class='bx bx-code-alt' style='color:#00eeff'></i>
-                        <h2>Full Stack Developer</h2>
-                        <p>
-                            I have hands-on experience in full-stack development, building scalable web applications using Python, React.js, and SQL.  
-                            At Avasoft, I worked on frontend and backend development, designing efficient APIs, implementing user-friendly interfaces, and optimizing database performance.  
-                            My expertise includes React hooks (useState, useEffect), backend frameworks like Flask/Django, and SQL-based relational databases.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="services" id="services">
-            <div class="container">
-                <h1 class="sub-title">My<span>Projects</span></h1>
-                <div class="services-list">
-                    <div>
-                        <i class='bx bxl-python' style='color:#00eeff'></i>
-                        <h2>AI-Powered Learning & Evaluation System</h2>
-                        <p>
-                            This application leverages AI models to conduct interactive evaluations for trainees and interns. 
-                            The system utilizes a pre-fed knowledge base (KB) to generate relevant questions, track intern activity during the review, 
-                            and validate responses dynamically. The AI enables one-on-one conversational assessments where the intern interacts directly 
-                            with the model. <br><br>
-                            Key Technologies Used: Azure OpenAI (LLM), Whisper (Speech-to-Text), AI Activity Tracking.
-                        </p>
-                        <a href="#" class="read">Learn More </a>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get To Know More</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class='bx bx-graduation'></i>
                     </div>
-                    
-                    
-                    <div>
-                        <i class='bx bx-cloud' style='color:#00eeff'></i>
-                        <h2>AI-Powered Cloud Architecture Generator</h2>
-                        <p>
-                            This AI-driven platform automates cloud architecture creation based on user inputs. 
-                            Users can specify project details, preferred infrastructure-as-code language 
-                            (Terraform, Pulumi, CloudFormation, ARM, Bicep), cloud provider (AWS, Azure, GCP), 
-                            and architecture type (DataOps, Serverless, Microservices, etc.). <br><br>
-                            The system then generates an architecture diagram, allows validation and modifications, 
-                            and produces deployable code. <br><br>
-                            <strong>Key Features:</strong> <br>
-                            - Auto-generation of architecture diagrams <br>
-                            - AI-driven recommendations & re-generation <br>
-                            - Multi-language support (Terraform, Pulumi, CloudFormation, ARM, Bicep) <br>
-                            - Seamless deployment via GitHub, GitLab, Azure DevOps, Bitbucket <br>
-                            - Integrated cost tracking dashboard for monitoring cloud expenses
-                        </p>
-                        <a href="#" class="read">Learn More </a>
+                    <h3>Education</h3>
+                    <p><strong>Master of Computer Applications (MCA)</strong></p>
+                    <p class="year">Bishop Heber College, Tiruchirappalli | 2021–2023</p>
+                    <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
+                    <p class="year">Bishop Heber College, Tiruchirappalli | 2018–2021</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class='bx bx-briefcase-alt'></i>
                     </div>
-                    <div>
-                        <i class='bx bx-brain' style='color:#00eeff'></i>
-                        <h2>AI-Powered Report Generator</h2>
-                        <p>
-                            This system leverages AWS AI models to analyze and generate insights from various user inputs. It provides 
-                            intelligent automation for document summarization, architecture analysis, and cost estimation. <br><br>
-                    
-                            <strong>Key Features:</strong> <br>
-                            - Meeting Transcript Analysis: Users upload call or meeting transcripts; AI performs chunking based on file size 
-                              and generates a concise summary.<br>
-                            - Business Flow Diagram Interpretation: Uses Vision AI to analyze business flow diagrams and generate 
-                              descriptions based on the flow.<br>
-                            - Cloud Architecture Analysis: Evaluates the current cloud architecture, provides suggestions, explains its 
-                              structure, pros & cons, and offers future improvement plans.<br>
-                            - Cost Scraping & Estimation: Uses Playwright to scrape billing URLs and extract cost details of the 
-                              architecture being used.<br>
-                        </p>
-                        <a href="#" class="read">Learn More </a>
+                    <h3>Professional Summary</h3>
+                    <p>
+                        AI and ML Analyst with hands-on experience in developing and deploying AI-driven solutions. 
+                        Proficient in programming languages, machine learning techniques, and cloud-based services.
+                    </p>
+                    <p>
+                        Expertise includes full-stack development, cloud architectures, and implementing real-time 
+                        solutions using AWS, Azure, Kafka, Redis, and more.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class='bx bx-trophy'></i>
                     </div>
-                    <div>
-                        <i class='bx bx-bar-chart-alt' style='color:#00eeff'></i>
-                        <h2>AI-Powered Insight Generator with Chatbot</h2>
-                        <p>
-                            This AI-driven system automates business insight generation and provides an interactive chatbot for client-specific queries. 
-                            It fetches data from Snowflake, processes insights using AWS Bedrock, and delivers reports via email.<br><br>
-                    
-                            <strong>Key Features:</strong> <br>
-                            - Automated Insight Reports: Generates reports at weekly (7 days), monthly (30 days), and quarterly (90 days) intervals.<br>
-                            - AI-Generated Queries: Uses AWS Bedrock models to construct optimized Snowflake queries dynamically.<br>
-                            - Data Analysis & Reporting: Connects to Snowflake DB, retrieves data, and generates insights.<br>
-                            - Knowledge Base (KB) Integration: Uses table DDL to generate precise queries with proper schema references.<br>
-                            - Email Automation: Sends periodic insights and reports to clients automatically.<br>
-                            - AI-Powered Chatbot: Allows users to query client-specific insights, clear doubts, and interact with real-time business data.<br>
-                            - Tech Stack: Python, AWS Bedrock, Snowflake, Email APIs, Chatbot Framework.<br>
-                        </p>
-                        <a href="#" class="read">Learn More </a>
-                    </div>
-                    
-                    
+                    <h3>Achievements & Leadership</h3>
+                    <ul class="expertise-list">
+                        <li><i class='bx bx-check-circle'></i> Chairman, MCA Student Association (2022–2023)</li>
+                        <li><i class='bx bx-check-circle'></i> Led state-level symposium BOOTFETE-2k22</li>
+                        <li><i class='bx bx-check-circle'></i> Student Pupil Association Member (2021–2023)</li>
+                        <li><i class='bx bx-check-circle'></i> Second Semester Master's Achievement</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- <section class="contact" id="contact">
-        <div class="contact-text">
-            <h2>Contact <span>Me</span></h2>
-            <h3>Let's Work Together</h3>
-    
-            <div class="contact-icons">
-                <a href="#" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://www.instagram.com/sugil_santhosh/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-                <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
-            </div>
-    
-            <ul class="contact-list">
-                <li><i class='bx bxs-send'></i> <a href="mailto:sugilsanthosh243@gmail.com">sugilsanthosh243@gmail.com</a></li>
-                <li><i class='bx bx-phone-call'></i> <a href="tel:+918072078586">+91 80720 78586</a></li>
-            </ul>
-        </div>
-    
-        <div class="contact-form">
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Enter Your Name" required>
-                <input type="email" name="email" placeholder="Enter Your Email" required>
-                <input type="text" name="subject" placeholder="Enter Your Subject">
-                <textarea name="message" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
-                <button type="submit" class="send">Submit</button>
-            </form>
-        </div>
-    </section> -->
-    <section class="contact" id="contact">
-        <div class="contact-text">
-            <h2>Contact <span>Me</span></h2>
-            <h3>Let's Work Together</h3>
-
-            <div class="contact-icons">
-                <a href="#" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://www.instagram.com/sugil_santhosh/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-                <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Professional Journey</span>
+                <h2 class="section-title">Work Experience</h2>
             </div>
 
-            <ul class="contact-list">
-                <li><i class='bx bxs-send'></i> <a href="mailto:sugilsanthosh243@gmail.com">sugilsanthosh243@gmail.com</a></li>
-                <li><i class='bx bx-phone-call'></i> <a href="tel:+918072078586">+91 80720 78586</a></li>
-            </ul>
-        </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date"><i class='bx bx-calendar'></i> April 2025 – July 2025 (4 Months)</span>
+                        <h3>Technical Analyst (Contract)</h3>
+                        <h4><i class='bx bx-buildings'></i> VDart</h4>
+                        <ul class="experience-list">
+                            <li><i class='bx bx-chevron-right'></i> Developed Mock Call Simulation System reducing trainer workload by 70%</li>
+                            <li><i class='bx bx-chevron-right'></i> Built all-in-one candidate engagement platform improving satisfaction by 65%</li>
+                            <li><i class='bx bx-chevron-right'></i> Created Email Campaign Automation Tool for recruitment outreach</li>
+                            <li><i class='bx bx-chevron-right'></i> Engineered Call Analyzer AI Module reducing manual analysis time by 80%</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span><i class='bx bx-brain'></i> AI/ML</span>
+                            <span><i class='bx bxl-python'></i> Python</span>
+                            <span><i class='bx bxl-react'></i> React.js</span>
+                            <span><i class='bx bx-data'></i> PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="contact-form">
-            <form id="contact-form">
-                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
-                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
-                <input type="text" name="subject" id="subject" placeholder="Enter Your Subject">
-                <textarea name="message" id="message" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
-                <button type="submit" class="send">Submit</button>
-            </form>
-            <p id="status-message"></p>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date"><i class='bx bx-calendar'></i> Dec 2023 – March 2025 (1 Year 4 Months)</span>
+                        <h3>AI and ML Analyst</h3>
+                        <h4><i class='bx bx-buildings'></i> Avasoft</h4>
+                        <ul class="experience-list">
+                            <li><i class='bx bx-chevron-right'></i> Developed AI-powered chatbots integrated with AWS Bedrock</li>
+                            <li><i class='bx bx-chevron-right'></i> Implemented AI-based insights for cloud cost management</li>
+                            <li><i class='bx bx-chevron-right'></i> Built automated AI-driven systems using Snowflake data warehousing</li>
+                            <li><i class='bx bx-chevron-right'></i> Designed Kafka-based message queuing for distributed architectures</li>
+                            <li><i class='bx bx-chevron-right'></i> Applied ML models for automated insights from large datasets</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span><i class='bx bxl-aws'></i> AWS Bedrock</span>
+                            <span><i class='bx bxl-microsoft'></i> Azure</span>
+                            <span><i class='bx bx-data'></i> Snowflake</span>
+                            <span><i class='bx bx-chip'></i> Kafka</span>
+                            <span><i class='bx bx-server'></i> Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Technical Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class='bx bx-code-alt'></i>
+                    </div>
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>C/C++</span>
+                        <span>JavaScript</span>
+                        <span>TypeScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class='bx bx-layout'></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <div class="skill-tags">
+                        <span>React.js</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Bootstrap</span>
+                        <span>Tailwind CSS</span>
+                        <span>Full Stack</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class='bx bx-brain'></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span>OpenAI</span>
+                        <span>Hugging Face</span>
+                        <span>AWS Bedrock</span>
+                        <span>Claude Sonnet</span>
+                        <span>RAG</span>
+                        <span>NLP</span>
+                        <span>Deep Learning</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class='bx bx-cloud'></i>
+                    </div>
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span>AWS</span>
+                        <span>Azure</span>
+                        <span>Terraform</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>CI/CD</span>
+                        <span>MLOps</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class='bx bx-data'></i>
+                    </div>
+                    <h3>Databases & Message Queuing</h3>
+                    <div class="skill-tags">
+                        <span>PostgreSQL</span>
+                        <span>MySQL</span>
+                        <span>Snowflake</span>
+                        <span>Redis</span>
+                        <span>Kafka</span>
+                        <span>Vector DB</span>
+                        <span>Supabase</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class='bx bx-server'></i>
+                    </div>
+                    <h3>Frameworks & APIs</h3>
+                    <div class="skill-tags">
+                        <span>Flask</span>
+                        <span>Django</span>
+                        <span>FastAPI</span>
+                        <span>REST API</span>
+                        <span>GraphQL</span>
+                        <span>Streamlit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class='bx bx-microphone'></i>
+                    </div>
+                    <h3>Voice Agent using OpenAI Whisper & GPT</h3>
+                    <p class="project-role"><i class='bx bx-user'></i> AI Developer & Full Stack Engineer</p>
+                    <p>
+                        Pure conversational AI model designed to improve communication skills through real-time voice interactions. 
+                        Provides detailed feedback on speech patterns, clarity, and conversation flow. Admin dashboard enables 
+                        comprehensive monitoring of all training sessions and user progress analytics.
+                    </p>
+                    <div class="project-tags">
+                        <span><i class='bx bxl-python'></i> Python</span>
+                        <span><i class='bx bx-microphone'></i> OpenAI Whisper</span>
+                        <span><i class='bx bx-brain'></i> GPT-4</span>
+                        <span><i class='bx bxl-react'></i> React.js</span>
+                        <span><i class='bx bx-data'></i> PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class='bx bx-bot'></i>
+                    </div>
+                    <h3>Recruitment Automation using AI Agents</h3>
+                    <p class="project-role"><i class='bx bx-user'></i> AI/ML Developer & Backend Engineer</p>
+                    <p>
+                        End-to-end recruitment automation platform powered by multiple AI agents. Automates candidate sourcing, 
+                        resume screening, interview scheduling, and follow-up communications. Intelligent agents handle workflow 
+                        orchestration, candidate matching, and automated outreach campaigns with personalized messaging.
+                    </p>
+                    <div class="project-tags">
+                        <span><i class='bx bxl-python'></i> Python</span>
+                        <span><i class='bx bx-brain'></i> LangChain</span>
+                        <span><i class='bx bxl-aws'></i> AWS Bedrock</span>
+                        <span><i class='bx bx-chip'></i> AI Agents</span>
+                        <span><i class='bx bx-server'></i> FastAPI</span>
+                        <span><i class='bx bxl-react'></i> React.js</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class='bx bx-briefcase'></i>
+                    </div>
+                    <h3>Recruiter Toolkit - All-in-One AI Platform</h3>
+                    <p class="project-role"><i class='bx bx-user'></i> Full Stack AI Developer</p>
+                    <p>
+                        Comprehensive AI-powered toolkit for recruiters featuring JD Analyzer for job description optimization, 
+                        Profile Reranker for intelligent candidate scoring, Boolean Generator for advanced search queries, 
+                        Email Generator for personalized outreach, Resume Parser, Skills Matcher, and Interview Question Generator. 
+                        Streamlines entire recruitment workflow with intelligent automation.
+                    </p>
+                    <div class="project-tags">
+                        <span><i class='bx bxl-python'></i> Python</span>
+                        <span><i class='bx bx-brain'></i> OpenAI GPT-4</span>
+                        <span><i class='bx bx-chip'></i> NLP</span>
+                        <span><i class='bx bx-server'></i> Flask</span>
+                        <span><i class='bx bxl-react'></i> React.js</span>
+                        <span><i class='bx bx-data'></i> Vector DB</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class='bx bx-brain'></i>
+                    </div>
+                    <h3>AI-Powered Learning & Evaluation System</h3>
+                    <p class="project-role"><i class='bx bx-user'></i> Full Stack and AI Developer</p>
+                    <p>
+                        Developed an AI-driven application to automate trainee review process using LLMs and 
+                        Whisper AI for speech-to-text. Implemented automated tracking and real-time feedback.
+                    </p>
+                    <div class="project-tags">
+                        <span><i class='bx bxl-microsoft'></i> Azure OpenAI</span>
+                        <span><i class='bx bx-microphone'></i> Whisper</span>
+                        <span><i class='bx bxl-python'></i> Python</span>
+                        <span><i class='bx bxl-react'></i> React.js</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class='bx bx-cloud'></i>
+                    </div>
+                    <h3>AI-Powered Cloud Architecture Automation</h3>
+                    <p class="project-role"><i class='bx bx-user'></i> Backend and AI Developer</p>
+                    <p>
+                        Automated cloud architecture generation with AI-driven diagram creation and code generation. 
+                        Implemented real-time cost tracking dashboards for cloud spending monitoring.
+                    </p>
+                    <div class="project-tags">
+                        <span><i class='bx bxl-python'></i> Python</span>
+                        <span><i class='bx bxl-aws'></i> AWS</span>
+                        <span><i class='bx bxl-microsoft'></i> Azure</span>
+                        <span><i class='bx bx-code'></i> Terraform</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class='bx bx-file'></i>
+                    </div>
+                    <h3>Report Generator using AWS AI Models</h3>
+                    <p class="project-role"><i class='bx bx-user'></i> Full Stack and AI Developer</p>
+                    <p>
+                        Developed report generation system using AWS Bedrock to process call transcripts and 
+                        meeting documents. Integrated Playwright for AWS billing scraping and cost analysis.
+                    </p>
+                    <div class="project-tags">
+                        <span><i class='bx bxl-aws'></i> AWS Bedrock</span>
+                        <span><i class='bx bx-play'></i> Playwright</span>
+                        <span><i class='bx bx-show'></i> Vision Models</span>
+                        <span><i class='bx bx-data'></i> Snowflake</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Professional Development</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class='bx bx-certification'></i>
+                    </div>
+                    <h3>Diploma in Graphic Design</h3>
+                    <p>Dream Zone, Tiruchirappalli</p>
+                    <span class="cert-year">2020–2022</span>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class='bx bx-shield'></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>SimpliLearn</p>
+                    <span class="cert-year">2022</span>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class='bx bxl-python'></i>
+                    </div>
+                    <h3>Programming in Python</h3>
+                    <p>SimpliLearn</p>
+                    <span class="cert-year">2022</span>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class='bx bx-code-block'></i>
+                    </div>
+                    <h3>Full Stack Web Development</h3>
+                    <p>Udemy</p>
+                    <span class="cert-year">2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Let's Work Together</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class='bx bx-envelope'></i>
+                        </div>
+                        <h4>Email</h4>
+                        <a href="mailto:sugilsanthosh243@gmail.com">sugilsanthosh243@gmail.com</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class='bx bx-phone'></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <a href="tel:+918072078586">+91 807-207-8586</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class='bx bx-map'></i>
+                        </div>
+                        <h4>Location</h4>
+                        <p>Tiruchirappalli, India</p>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/sugils" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="https://sugils.github.io/Sugil-Profile/" target="_blank" title="Portfolio"><i class='bx bx-globe'></i></a>
+                        <a href="mailto:sugilsanthosh243@gmail.com" title="Email"><i class='bx bx-envelope'></i></a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <i class='bx bx-user'></i>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <i class='bx bx-envelope'></i>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <i class='bx bx-message-detail'></i>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <i class='bx bx-message-dots'></i>
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class='bx bx-send'></i> Send Message
+                    </button>
+                    <p id="status-message"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
+        <div class="modal-overlay" onclick="closeResume()"></div>
         <div class="modal-content">
-            <span class="close" onclick="closeResume()">&times;</span>
-            <iframe src="SUGIL -AI-ML Analyst Resume.pdf" width="100%" height="500px"></iframe>
+            <button class="modal-close" onclick="closeResume()">
+                <i class='bx bx-x'></i>
+            </button>
+            <iframe src="SUGIL -AI-ML Analyst Resume.pdf" width="100%" height="600px"></iframe>
         </div>
     </div>
-    
-    <div class="last-text">
-        <p>Developed by SUGIL S &copy; 2025</p>
-    </div>
-    
-    <a href="#" class="top"><i class='bx bxs-up-arrow'></i></a>
-    
 
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Sugil S. Designed & Built with <i class='bx bx-heart'></i></p>
+    </footer>
 
-
+    <!-- JavaScript -->
     <script src="main.js"></script>
 </body>
-
 </html>
