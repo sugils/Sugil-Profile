@@ -1,593 +1,733 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sugil S - AI/ML Analyst</title>
-    
+    <title>Sugil S — AI/ML Engineer | NLP, Decision Systems &amp; Cloud AI</title>
+
+    <meta name="description" content="Sugil S — AI/ML Engineer with 2+ years building production-grade AI systems across NLP, LLMs, RAG and decision-support. Expertise in end-to-end ML pipelines, real-time inference and cloud-native AI deployments.">
+    <meta name="author" content="Sugil S">
+    <meta name="theme-color" content="#F5F6FA">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sugil S — AI/ML Engineer">
+    <meta property="og:description" content="Production-grade AI systems across NLP, LLMs, decision support and cloud-native MLOps.">
+    <meta property="og:url" content="https://sugils.github.io/Sugil-Profile/">
+    <meta property="og:image" content="sugil-image-1.png">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23C50337'/><text y='68' x='50' text-anchor='middle' font-size='58' font-family='sans-serif' font-weight='700' fill='%23fff'>S</text></svg>">
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
     <!-- Icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-    <!-- Stylesheet -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="carousel.css">
+
     <!-- Scripts -->
-    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+
+    <script>
+        // Resolved before first paint so the theme never flashes.
+        (function () {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            // Reveal animations only hide content when JS can bring it back.
+            document.documentElement.classList.add('js');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', theme === 'dark' ? '#030D26' : '#F5F6FA');
+        })();
+    </script>
 </head>
 <body>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">SUGIL<span>.dev</span></a>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link"><i class='bx bx-home-alt'></i> Home</a>
-                <a href="#about" class="nav-link"><i class='bx bx-user'></i> About</a>
-                <a href="#experience" class="nav-link"><i class='bx bx-briefcase'></i> Experience</a>
-                <a href="#skills" class="nav-link"><i class='bx bx-code-alt'></i> Skills</a>
-                <a href="#projects" class="nav-link"><i class='bx bx-folder'></i> Projects</a>
-                <a href="#contact" class="nav-link"><i class='bx bx-message-dots'></i> Contact</a>
+            <a href="#home" class="nav-logo">
+                <span class="logo-mark">S</span>
+                <span class="logo-text">Sugil&rsquo;s <em>Portfolio</em></span>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button class="resume-btn" onclick="openResume()">
-                <i class='bx bx-download'></i> Resume
-            </button>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle colour theme">
+                    <i class='bx bx-moon theme-icon-dark'></i>
+                    <i class='bx bx-sun theme-icon-light'></i>
+                </button>
+                <button class="btn btn-primary btn-sm resume-btn" type="button" onclick="openResume()">
+                    <i class='bx bx-file'></i><span>Resume</span>
+                </button>
+                <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-greeting">Hello, I'm</span>
-                    <h1 class="hero-name">Sugil S</h1>
-                    <div class="hero-role">
-                        <span class="role-text">I'm a </span>
-                        <span class="text"></span>
-                    </div>
-                    <p class="hero-description">
-                        AI and ML Analyst with hands-on experience in developing and deploying AI-driven solutions. 
-                        Proficient in machine learning techniques, cloud-based services, and full-stack development 
-                        with expertise in AWS, Azure, and modern web technologies.
-                    </p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-card">
-                            <i class='bx bx-calendar'></i>
-                            <div class="stat-info">
-                                <h3>2+</h3>
-                                <p>Years Experience</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <i class='bx bx-bulb'></i>
-                            <div class="stat-info">
-                                <h3>7+</h3>
-                                <p>Major Projects</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <i class='bx bx-code-block'></i>
-                            <div class="stat-info">
-                                <h3>20+</h3>
-                                <p>Technologies</p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Hero — centered name lockup with blur-in type and overlapping portrait -->
+    <section id="home" class="hero stack-panel">
+        <div class="container hero-center">
+            <span class="badge hero-badge" data-reveal>
+                <span class="pulse-dot"></span> Open to AI/ML engineering roles
+            </span>
 
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class='bx bx-send'></i> Get In Touch
-                        </a>
-                        <a href="#projects" class="btn btn-outline">
-                            <i class='bx bx-briefcase'></i> View Projects
-                        </a>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" class="social-link" title="LinkedIn">
-                            <i class='bx bxl-linkedin'></i>
-                        </a>
-                        <a href="https://github.com/sugils" target="_blank" class="social-link" title="GitHub">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                        <a href="https://sugils.github.io/Sugil-Profile/" target="_blank" class="social-link" title="Portfolio">
-                            <i class='bx bx-globe'></i>
-                        </a>
-                        <a href="mailto:sugilsanthosh243@gmail.com" class="social-link" title="Email">
-                            <i class='bx bx-envelope'></i>
-                        </a>
-                    </div>
+            <div class="hero-name-stack">
+                <h1 class="hero-name" aria-label="Sugil Santhosh">
+                    <span class="hero-name-line hero-name-first" data-blur="letters" data-blur-delay="90">Sugil</span>
+                    <span class="hero-name-line hero-name-last" data-blur="letters" data-blur-delay="90" data-blur-start="450">Santhosh</span>
+                </h1>
+                <div class="hero-portrait" aria-hidden="true">
+                    <img src="sugil-image-1.png" alt="" loading="eager">
                 </div>
+            </div>
 
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <img src="sugil-image-1.png" alt="Sugil S">
-                        <div class="image-border"></div>
-                    </div>
+            <p class="hero-tagline" data-blur="words" data-blur-delay="150" data-blur-start="1250">
+                Designing intelligent systems in code.
+            </p>
+
+            <div class="hero-cta" data-reveal style="--delay:.2s">
+                <a href="#projects" class="btn btn-primary magnetic">
+                    <i class='bx bx-layer'></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-ghost magnetic">
+                    <i class='bx bx-send'></i> Get In Touch
+                </a>
+            </div>
+
+            <div class="hero-quick-stats" data-reveal style="--delay:.3s">
+                <div class="hq-stat">
+                    <h3><span class="counter" data-count="2">0</span>+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="hq-stat">
+                    <h3><span class="counter" data-count="8">0</span>+</h3>
+                    <p>AI Systems Shipped</p>
+                </div>
+                <div class="hq-stat">
+                    <h3><span class="counter" data-count="25">0</span>+</h3>
+                    <p>Technologies</p>
                 </div>
             </div>
         </div>
+
+        <a href="#about" class="hero-scroll" aria-label="Scroll to about">
+            <i class='bx bx-chevron-down'></i>
+        </a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Marquee -->
+    <div class="marquee stack-panel stack-sheet" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-group">
+                <span>Python</span><span>PyTorch</span><span>LLMs</span><span>RAG</span><span>NLP</span>
+                <span>FastAPI</span><span>Kafka</span><span>Redis</span><span>Snowflake</span>
+                <span>AWS Bedrock</span><span>Azure OpenAI</span><span>Docker</span><span>Kubernetes</span>
+                <span>Terraform</span><span>PostgreSQL</span><span>Vector DB</span><span>Whisper</span><span>MLOps</span>
+            </div>
+            <div class="marquee-group">
+                <span>Python</span><span>PyTorch</span><span>LLMs</span><span>RAG</span><span>NLP</span>
+                <span>FastAPI</span><span>Kafka</span><span>Redis</span><span>Snowflake</span>
+                <span>AWS Bedrock</span><span>Azure OpenAI</span><span>Docker</span><span>Kubernetes</span>
+                <span>Terraform</span><span>PostgreSQL</span><span>Vector DB</span><span>Whisper</span><span>MLOps</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="section about stack-panel stack-sheet">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Get To Know More</span>
-                <h2 class="section-title">About Me</h2>
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">01 &mdash; About</span>
+                <h2 class="section-title">Engineering intelligence that ships</h2>
+                <p class="section-lead">
+                    From model design to Kubernetes rollout &mdash; I own the full path from idea to
+                    production-grade AI service.
+                </p>
             </div>
 
-            <div class="about-content">
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class='bx bx-graduation'></i>
-                    </div>
-                    <h3>Education</h3>
-                    <p><strong>Master of Computer Applications (MCA)</strong></p>
-                    <p class="year">Bishop Heber College, Tiruchirappalli | 2021–2023</p>
-                    <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
-                    <p class="year">Bishop Heber College, Tiruchirappalli | 2018–2021</p>
-                </div>
-
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class='bx bx-briefcase-alt'></i>
-                    </div>
+            <div class="about-grid">
+                <article class="card about-main" data-reveal data-spotlight>
+                    <div class="card-icon"><i class='bx bx-user-voice'></i></div>
                     <h3>Professional Summary</h3>
                     <p>
-                        AI and ML Analyst with hands-on experience in developing and deploying AI-driven solutions. 
-                        Proficient in programming languages, machine learning techniques, and cloud-based services.
+                        AI/ML Engineer with <strong>2+ years</strong> building and deploying production-grade
+                        AI systems across NLP, LLMs and decision-support use cases. Strong expertise in
+                        end-to-end ML pipelines, real-time inference systems and cloud-native AI deployments.
                     </p>
                     <p>
-                        Expertise includes full-stack development, cloud architectures, and implementing real-time 
-                        solutions using AWS, Azure, Kafka, Redis, and more.
+                        Hands-on experience developing scalable AI services integrated with enterprise
+                        workflows &mdash; leveraging distributed systems, Kafka and modern MLOps practices.
+                        Proven ability to design high-impact solutions for automation, analytics and
+                        intelligent decision-making.
                     </p>
-                </div>
-
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class='bx bx-trophy'></i>
+                    <div class="focus-pills">
+                        <span>Decision Support Systems</span>
+                        <span>Conversational AI</span>
+                        <span>Speech-to-Text</span>
+                        <span>Information Extraction</span>
+                        <span>Predictive Modeling</span>
                     </div>
-                    <h3>Achievements & Leadership</h3>
-                    <ul class="expertise-list">
-                        <li><i class='bx bx-check-circle'></i> Chairman, MCA Student Association (2022–2023)</li>
-                        <li><i class='bx bx-check-circle'></i> Led state-level symposium BOOTFETE-2k22</li>
-                        <li><i class='bx bx-check-circle'></i> Student Pupil Association Member (2021–2023)</li>
-                        <li><i class='bx bx-check-circle'></i> Second Semester Master's Achievement</li>
+                </article>
+
+                <article class="card" data-reveal style="--delay:.08s" data-spotlight>
+                    <div class="card-icon"><i class='bx bx-book-open'></i></div>
+                    <h3>Education</h3>
+                    <div class="edu-item">
+                        <h4>Master of Computer Applications (MCA)</h4>
+                        <p>Bishop Heber College, Tiruchirappalli</p>
+                        <span class="chip">2021 &ndash; 2023</span>
+                    </div>
+                    <div class="edu-item">
+                        <h4>Bachelor of Computer Applications (BCA)</h4>
+                        <p>Bishop Heber College, Tiruchirappalli</p>
+                        <span class="chip">2018 &ndash; 2021</span>
+                    </div>
+                </article>
+
+                <article class="card" data-reveal style="--delay:.16s" data-spotlight>
+                    <div class="card-icon"><i class='bx bx-medal'></i></div>
+                    <h3>Leadership &amp; Recognition</h3>
+                    <ul class="check-list">
+                        <li><i class='bx bx-check'></i> Team Lead, AI/ML engineering at Xyant Services</li>
+                        <li><i class='bx bx-check'></i> Chairman, MCA Student Association (2022&ndash;2023)</li>
+                        <li><i class='bx bx-check'></i> Led state-level symposium BOOTFETE-2k22</li>
+                        <li><i class='bx bx-check'></i> Student Pupil Association Member (2021&ndash;2023)</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <!-- Experience -->
+    <section id="experience" class="section experience stack-panel stack-sheet">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">My Professional Journey</span>
-                <h2 class="section-title">Work Experience</h2>
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">02 &mdash; Experience</span>
+                <h2 class="section-title">Where I&rsquo;ve built</h2>
+                <p class="section-lead">Two-plus years across banking automation, recruitment AI and enterprise cloud analytics.</p>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-date"><i class='bx bx-calendar'></i> April 2025 – July 2025 (4 Months)</span>
-                        <h3>Technical Analyst (Contract)</h3>
+            <div class="timeline" id="timeline">
+                <span class="timeline-rail"><span class="timeline-fill" id="timelineFill"></span></span>
+
+                <article class="timeline-item" data-reveal data-spotlight>
+                    <span class="timeline-dot current"></span>
+                    <div class="card timeline-card">
+                        <div class="timeline-top">
+                            <span class="chip chip-accent"><i class='bx bx-calendar'></i> Nov 2025 &ndash; Present</span>
+                            <span class="chip chip-live"><span class="pulse-dot"></span> Current</span>
+                        </div>
+                        <h3>AI/ML Engineer &mdash; Team Lead</h3>
+                        <h4><i class='bx bx-buildings'></i> Xyant Services</h4>
+                        <ul class="bullet-list">
+                            <li>Leading development of AI-driven systems for <strong>banking and enterprise automation</strong>, focused on decision-support and predictive models.</li>
+                            <li>Designing end-to-end ML pipelines &mdash; data ingestion, model training, evaluation and deployment.</li>
+                            <li>Building <strong>real-time AI inference systems</strong> on Kafka and distributed architectures.</li>
+                            <li>Deploying scalable AI services with Docker and Kubernetes.</li>
+                            <li>Driving architecture decisions across accuracy, latency and cost optimisation.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span>Decision AI</span><span>Kafka</span><span>Kubernetes</span><span>Docker</span><span>MLOps</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item" data-reveal style="--delay:.08s" data-spotlight>
+                    <span class="timeline-dot"></span>
+                    <div class="card timeline-card">
+                        <div class="timeline-top">
+                            <span class="chip chip-accent"><i class='bx bx-calendar'></i> Apr 2025 &ndash; Oct 2025</span>
+                        </div>
+                        <h3>Technical Analyst</h3>
                         <h4><i class='bx bx-buildings'></i> VDart</h4>
-                        <ul class="experience-list">
-                            <li><i class='bx bx-chevron-right'></i> Developed Mock Call Simulation System reducing trainer workload by 70%</li>
-                            <li><i class='bx bx-chevron-right'></i> Built all-in-one candidate engagement platform improving satisfaction by 65%</li>
-                            <li><i class='bx bx-chevron-right'></i> Created Email Campaign Automation Tool for recruitment outreach</li>
-                            <li><i class='bx bx-chevron-right'></i> Engineered Call Analyzer AI Module reducing manual analysis time by 80%</li>
+                        <ul class="bullet-list">
+                            <li>Built a <strong>Call Analyzer AI</strong> system with real-time audio processing, sentiment analysis and filler-word detection &mdash; <strong>80% manual effort reduction</strong>.</li>
+                            <li>Developed a <strong>Mock Interview Simulation System</strong> using AI-driven feedback loops, improving training efficiency by <strong>70%</strong>.</li>
+                            <li>Designed an LLM-powered candidate engagement platform, improving satisfaction by <strong>65%</strong>.</li>
+                            <li>Created an AI-based email automation system for recruitment workflows.</li>
                         </ul>
-                        <div class="tech-tags">
-                            <span><i class='bx bx-brain'></i> AI/ML</span>
-                            <span><i class='bx bxl-python'></i> Python</span>
-                            <span><i class='bx bxl-react'></i> React.js</span>
-                            <span><i class='bx bx-data'></i> PostgreSQL</span>
+                        <div class="tag-row">
+                            <span>LLMs</span><span>Whisper</span><span>Sentiment Analysis</span><span>React.js</span><span>PostgreSQL</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-date"><i class='bx bx-calendar'></i> Dec 2023 – March 2025 (1 Year 4 Months)</span>
-                        <h3>AI and ML Analyst</h3>
+                <article class="timeline-item" data-reveal style="--delay:.16s" data-spotlight>
+                    <span class="timeline-dot"></span>
+                    <div class="card timeline-card">
+                        <div class="timeline-top">
+                            <span class="chip chip-accent"><i class='bx bx-calendar'></i> Dec 2023 &ndash; Mar 2025</span>
+                        </div>
+                        <h3>AI &amp; ML Analyst</h3>
                         <h4><i class='bx bx-buildings'></i> Avasoft</h4>
-                        <ul class="experience-list">
-                            <li><i class='bx bx-chevron-right'></i> Developed AI-powered chatbots integrated with AWS Bedrock</li>
-                            <li><i class='bx bx-chevron-right'></i> Implemented AI-based insights for cloud cost management</li>
-                            <li><i class='bx bx-chevron-right'></i> Built automated AI-driven systems using Snowflake data warehousing</li>
-                            <li><i class='bx bx-chevron-right'></i> Designed Kafka-based message queuing for distributed architectures</li>
-                            <li><i class='bx bx-chevron-right'></i> Applied ML models for automated insights from large datasets</li>
+                        <ul class="bullet-list">
+                            <li>Developed AI-powered chatbots using <strong>AWS Bedrock</strong> and cloud services for enterprise querying and reporting.</li>
+                            <li>Built AI-driven analytics systems for cloud cost optimisation across AWS and Azure.</li>
+                            <li>Designed <strong>Kafka-based distributed pipelines</strong> for real-time data processing.</li>
+                            <li>Implemented Snowflake-based data pipelines for large-scale AI workloads.</li>
                         </ul>
-                        <div class="tech-tags">
-                            <span><i class='bx bxl-aws'></i> AWS Bedrock</span>
-                            <span><i class='bx bxl-microsoft'></i> Azure</span>
-                            <span><i class='bx bx-data'></i> Snowflake</span>
-                            <span><i class='bx bx-chip'></i> Kafka</span>
-                            <span><i class='bx bx-server'></i> Redis</span>
+                        <div class="tag-row">
+                            <span>AWS Bedrock</span><span>Azure</span><span>Snowflake</span><span>Kafka</span><span>Redis</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <!-- Skills -->
+    <section id="skills" class="section skills stack-panel stack-sheet">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Technical Expertise</span>
-                <h2 class="section-title">Skills & Technologies</h2>
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">03 &mdash; Skills</span>
+                <h2 class="section-title">Technical toolkit</h2>
+                <p class="section-lead">The stack I reach for when taking an AI system from notebook to production.</p>
             </div>
 
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class='bx bx-code-alt'></i>
+            <!-- Shader cards: swirling gradient backdrop under a dark glass panel. -->
+            <div class="skills-grid" id="skillsGrid">
+                <article class="skill-card shader-card" data-reveal style="--sc1:#021C4F; --sc2:#8E1D5B; --sc3:#F0356A">
+                    <div class="shader-swirl" aria-hidden="true"></div>
+                    <div class="shader-content">
+                        <div class="shader-icon"><i class='bx bx-code-alt'></i></div>
+                        <h3>Programming</h3>
+                        <p>The languages behind my services, pipelines and front ends.</p>
+                        <div class="tag-row">
+                            <span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span>
+                        </div>
                     </div>
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>Java</span>
-                        <span>C/C++</span>
-                        <span>JavaScript</span>
-                        <span>TypeScript</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class='bx bx-layout'></i>
+                <article class="skill-card shader-card" data-reveal style="--delay:.06s; --sc1:#33104E; --sc2:#C50337; --sc3:#FF7BA0">
+                    <div class="shader-swirl" aria-hidden="true"></div>
+                    <div class="shader-content">
+                        <div class="shader-icon"><i class='bx bx-brain'></i></div>
+                        <h3>AI &amp; Machine Learning</h3>
+                        <p>Model-side craft, from feature engineering to evaluation.</p>
+                        <div class="tag-row">
+                            <span>NLP</span><span>LLMs</span><span>RAG</span><span>Deep Learning</span>
+                            <span>Neural Networks</span><span>Feature Engineering</span>
+                            <span>Model Evaluation</span><span>Predictive Modeling</span>
+                        </div>
                     </div>
-                    <h3>Web Development</h3>
-                    <div class="skill-tags">
-                        <span>React.js</span>
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>Bootstrap</span>
-                        <span>Tailwind CSS</span>
-                        <span>Full Stack</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class='bx bx-brain'></i>
+                <article class="skill-card shader-card" data-reveal style="--delay:.12s; --sc1:#021C4F; --sc2:#C50337; --sc3:#5B7CC9">
+                    <div class="shader-swirl" aria-hidden="true"></div>
+                    <div class="shader-content">
+                        <div class="shader-icon"><i class='bx bx-network-chart'></i></div>
+                        <h3>AI Domains</h3>
+                        <p>The problem spaces I ship AI systems into.</p>
+                        <div class="tag-row">
+                            <span>Decision Support Systems</span><span>Conversational AI</span>
+                            <span>Speech-to-Text (Whisper)</span><span>Information Extraction</span>
+                        </div>
                     </div>
-                    <h3>AI & Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span>OpenAI</span>
-                        <span>Hugging Face</span>
-                        <span>AWS Bedrock</span>
-                        <span>Claude Sonnet</span>
-                        <span>RAG</span>
-                        <span>NLP</span>
-                        <span>Deep Learning</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class='bx bx-cloud'></i>
+                <article class="skill-card shader-card" data-reveal style="--delay:.18s; --sc1:#0A1B3F; --sc2:#5C1D5E; --sc3:#E4325D">
+                    <div class="shader-swirl" aria-hidden="true"></div>
+                    <div class="shader-content">
+                        <div class="shader-icon"><i class='bx bx-cloud'></i></div>
+                        <h3>Cloud &amp; MLOps</h3>
+                        <p>Where my systems run &mdash; containerised, automated, observed.</p>
+                        <div class="tag-row">
+                            <span>AWS</span><span>Azure</span><span>Docker</span>
+                            <span>Kubernetes</span><span>Terraform</span><span>CI/CD</span>
+                        </div>
                     </div>
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-tags">
-                        <span>AWS</span>
-                        <span>Azure</span>
-                        <span>Terraform</span>
-                        <span>Docker</span>
-                        <span>Kubernetes</span>
-                        <span>CI/CD</span>
-                        <span>MLOps</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class='bx bx-data'></i>
+                <article class="skill-card shader-card" data-reveal style="--delay:.24s; --sc1:#33104E; --sc2:#3557AC; --sc3:#F0356A">
+                    <div class="shader-swirl" aria-hidden="true"></div>
+                    <div class="shader-content">
+                        <div class="shader-icon"><i class='bx bx-server'></i></div>
+                        <h3>Backend &amp; APIs</h3>
+                        <p>How models reach real users, request by request.</p>
+                        <div class="tag-row">
+                            <span>FastAPI</span><span>Flask</span><span>REST APIs</span>
+                            <span>GraphQL</span><span>Microservices</span>
+                        </div>
                     </div>
-                    <h3>Databases & Message Queuing</h3>
-                    <div class="skill-tags">
-                        <span>PostgreSQL</span>
-                        <span>MySQL</span>
-                        <span>Snowflake</span>
-                        <span>Redis</span>
-                        <span>Kafka</span>
-                        <span>Vector DB</span>
-                        <span>Supabase</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class='bx bx-server'></i>
+                <article class="skill-card shader-card" data-reveal style="--delay:.3s; --sc1:#021C4F; --sc2:#A11447; --sc3:#6E8FE0">
+                    <div class="shader-swirl" aria-hidden="true"></div>
+                    <div class="shader-content">
+                        <div class="shader-icon"><i class='bx bx-data'></i></div>
+                        <h3>Distributed Systems &amp; Data</h3>
+                        <p>The data backbone for real-time AI workloads.</p>
+                        <div class="tag-row">
+                            <span>Kafka</span><span>Redis</span><span>Snowflake</span>
+                            <span>PostgreSQL</span><span>Vector Databases</span>
+                        </div>
                     </div>
-                    <h3>Frameworks & APIs</h3>
-                    <div class="skill-tags">
-                        <span>Flask</span>
-                        <span>Django</span>
-                        <span>FastAPI</span>
-                        <span>REST API</span>
-                        <span>GraphQL</span>
-                        <span>Streamlit</span>
-                    </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Projects -->
+    <section id="projects" class="section projects stack-panel stack-sheet">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">My Work</span>
-                <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">04 &mdash; Projects</span>
+                <h2 class="section-title">Selected work</h2>
+                <p class="section-lead">Systems I designed and shipped &mdash; from streaming fraud detection to LLM-powered evaluation platforms.</p>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class='bx bx-microphone'></i>
-                    </div>
-                    <h3>Voice Agent using OpenAI Whisper & GPT</h3>
-                    <p class="project-role"><i class='bx bx-user'></i> AI Developer & Full Stack Engineer</p>
-                    <p>
-                        Pure conversational AI model designed to improve communication skills through real-time voice interactions. 
-                        Provides detailed feedback on speech patterns, clarity, and conversation flow. Admin dashboard enables 
-                        comprehensive monitoring of all training sessions and user progress analytics.
-                    </p>
-                    <div class="project-tags">
-                        <span><i class='bx bxl-python'></i> Python</span>
-                        <span><i class='bx bx-microphone'></i> OpenAI Whisper</span>
-                        <span><i class='bx bx-brain'></i> GPT-4</span>
-                        <span><i class='bx bxl-react'></i> React.js</span>
-                        <span><i class='bx bx-data'></i> PostgreSQL</span>
-                    </div>
-                </div>
+            <div class="filter-bar" data-reveal>
+                <button class="filter-btn active" data-filter="all" type="button">All</button>
+                <button class="filter-btn" data-filter="ai" type="button">AI / LLM</button>
+                <button class="filter-btn" data-filter="cloud" type="button">Cloud &amp; Data</button>
+                <button class="filter-btn" data-filter="fullstack" type="button">Full Stack</button>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class='bx bx-bot'></i>
+            <!-- Article-style cards; clicking one opens the project detail modal. -->
+            <div class="projects-grid article-grid" id="projectsGrid">
+                <article class="article-card featured" data-project="fraud" data-category="ai cloud" data-reveal
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="Real-Time Fraud Detection System — view details"
+                         style="--card-img:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=60'); --g1:#C50337; --g2:#021C4F">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">Decision AI &middot; Streaming</p>
+                            <h3>Real-Time Fraud Detection System</h3>
+                            <p class="article-card-blurb">Anomaly detection over Kafka streams, tuned for low-latency, high-throughput decisions.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
                     </div>
-                    <h3>Recruitment Automation using AI Agents</h3>
-                    <p class="project-role"><i class='bx bx-user'></i> AI/ML Developer & Backend Engineer</p>
-                    <p>
-                        End-to-end recruitment automation platform powered by multiple AI agents. Automates candidate sourcing, 
-                        resume screening, interview scheduling, and follow-up communications. Intelligent agents handle workflow 
-                        orchestration, candidate matching, and automated outreach campaigns with personalized messaging.
-                    </p>
-                    <div class="project-tags">
-                        <span><i class='bx bxl-python'></i> Python</span>
-                        <span><i class='bx bx-brain'></i> LangChain</span>
-                        <span><i class='bx bxl-aws'></i> AWS Bedrock</span>
-                        <span><i class='bx bx-chip'></i> AI Agents</span>
-                        <span><i class='bx bx-server'></i> FastAPI</span>
-                        <span><i class='bx bxl-react'></i> React.js</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class='bx bx-briefcase'></i>
+                <article class="article-card" data-project="learning" data-category="ai fullstack" data-reveal style="--delay:.06s; --card-img:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=60'); --g1:#021C4F; --g2:#C50337"
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="AI-Powered Learning and Evaluation System — view details">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">AI &middot; Full Stack</p>
+                            <h3>AI-Powered Learning &amp; Evaluation System</h3>
+                            <p class="article-card-blurb">LLMs + Whisper speech-to-text automating trainee reviews with real-time feedback.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
                     </div>
-                    <h3>Recruiter Toolkit - All-in-One AI Platform</h3>
-                    <p class="project-role"><i class='bx bx-user'></i> Full Stack AI Developer</p>
-                    <p>
-                        Comprehensive AI-powered toolkit for recruiters featuring JD Analyzer for job description optimization, 
-                        Profile Reranker for intelligent candidate scoring, Boolean Generator for advanced search queries, 
-                        Email Generator for personalized outreach, Resume Parser, Skills Matcher, and Interview Question Generator. 
-                        Streamlines entire recruitment workflow with intelligent automation.
-                    </p>
-                    <div class="project-tags">
-                        <span><i class='bx bxl-python'></i> Python</span>
-                        <span><i class='bx bx-brain'></i> OpenAI GPT-4</span>
-                        <span><i class='bx bx-chip'></i> NLP</span>
-                        <span><i class='bx bx-server'></i> Flask</span>
-                        <span><i class='bx bxl-react'></i> React.js</span>
-                        <span><i class='bx bx-data'></i> Vector DB</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class='bx bx-brain'></i>
+                <article class="article-card" data-project="cloudarch" data-category="cloud ai" data-reveal style="--delay:.12s; --card-img:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=60'); --g1:#8E1D5B; --g2:#021C4F"
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="AI-Powered Cloud Architecture Automation — view details">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">Cloud Automation</p>
+                            <h3>AI-Powered Cloud Architecture Automation</h3>
+                            <p class="article-card-blurb">AI-generated architecture diagrams, IaC and deployment via SCM integration.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
                     </div>
-                    <h3>AI-Powered Learning & Evaluation System</h3>
-                    <p class="project-role"><i class='bx bx-user'></i> Full Stack and AI Developer</p>
-                    <p>
-                        Developed an AI-driven application to automate trainee review process using LLMs and 
-                        Whisper AI for speech-to-text. Implemented automated tracking and real-time feedback.
-                    </p>
-                    <div class="project-tags">
-                        <span><i class='bx bxl-microsoft'></i> Azure OpenAI</span>
-                        <span><i class='bx bx-microphone'></i> Whisper</span>
-                        <span><i class='bx bxl-python'></i> Python</span>
-                        <span><i class='bx bxl-react'></i> React.js</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class='bx bx-cloud'></i>
+                <article class="article-card" data-project="report" data-category="ai cloud" data-reveal style="--delay:.18s; --card-img:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=60'); --g1:#C50337; --g2:#4A1150"
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="Report Generator using AWS Bedrock — view details">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">GenAI &middot; AWS</p>
+                            <h3>Report Generator using AWS Bedrock</h3>
+                            <p class="article-card-blurb">LLM + vision-model reporting over transcripts, documents and cloud architectures.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
                     </div>
-                    <h3>AI-Powered Cloud Architecture Automation</h3>
-                    <p class="project-role"><i class='bx bx-user'></i> Backend and AI Developer</p>
-                    <p>
-                        Automated cloud architecture generation with AI-driven diagram creation and code generation. 
-                        Implemented real-time cost tracking dashboards for cloud spending monitoring.
-                    </p>
-                    <div class="project-tags">
-                        <span><i class='bx bxl-python'></i> Python</span>
-                        <span><i class='bx bxl-aws'></i> AWS</span>
-                        <span><i class='bx bxl-microsoft'></i> Azure</span>
-                        <span><i class='bx bx-code'></i> Terraform</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class='bx bx-file'></i>
+                <article class="article-card" data-project="insight" data-category="cloud ai" data-reveal style="--delay:.24s; --card-img:url('https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=900&q=60'); --g1:#33104E; --g2:#021C4F"
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="AI-Powered Insight Generation System — view details">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">Data &middot; GenAI</p>
+                            <h3>AI-Powered Insight Generation System</h3>
+                            <p class="article-card-blurb">Bedrock-generated Snowflake queries turning live business data into scheduled insights.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
                     </div>
-                    <h3>Report Generator using AWS AI Models</h3>
-                    <p class="project-role"><i class='bx bx-user'></i> Full Stack and AI Developer</p>
-                    <p>
-                        Developed report generation system using AWS Bedrock to process call transcripts and 
-                        meeting documents. Integrated Playwright for AWS billing scraping and cost analysis.
-                    </p>
-                    <div class="project-tags">
-                        <span><i class='bx bxl-aws'></i> AWS Bedrock</span>
-                        <span><i class='bx bx-play'></i> Playwright</span>
-                        <span><i class='bx bx-show'></i> Vision Models</span>
-                        <span><i class='bx bx-data'></i> Snowflake</span>
+                </article>
+
+                <article class="article-card" data-project="voice" data-category="ai fullstack" data-reveal style="--delay:.3s; --card-img:url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=900&q=60'); --g1:#C50337; --g2:#6A1743"
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="Voice Agent with Whisper and GPT — view details">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">Conversational AI</p>
+                            <h3>Voice Agent with Whisper &amp; GPT</h3>
+                            <p class="article-card-blurb">Real-time voice coaching with feedback on speech patterns, clarity and flow.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
                     </div>
-                </div>
+                </article>
+
+                <article class="article-card" data-project="recruit" data-category="ai fullstack" data-reveal style="--delay:.36s; --card-img:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=60'); --g1:#5C1D5E; --g2:#C50337"
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="Recruitment Automation with AI Agents — view details">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">AI Agents</p>
+                            <h3>Recruitment Automation with AI Agents</h3>
+                            <p class="article-card-blurb">Multi-agent platform covering sourcing, screening, scheduling and outreach.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
+                    </div>
+                </article>
+
+                <article class="article-card" data-project="toolkit" data-category="ai fullstack" data-reveal style="--delay:.42s; --card-img:url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=900&q=60'); --g1:#021C4F; --g2:#8E1D5B"
+                         role="button" tabindex="0" aria-haspopup="dialog" aria-label="Recruiter Toolkit, all-in-one AI platform — view details">
+                    <div class="article-card-overlay" aria-hidden="true"></div>
+                    <div class="article-card-content">
+                        <div class="article-card-top">
+                            <p class="article-card-category">AI Platform</p>
+                            <h3>Recruiter Toolkit &mdash; All-in-One AI Platform</h3>
+                            <p class="article-card-blurb">JD analysis, candidate reranking, Boolean queries and interview prep in one workflow.</p>
+                        </div>
+                        <span class="article-card-cta">View details <i class='bx bx-right-arrow-alt'></i></span>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="certifications">
+    <!-- Certifications -->
+    <section class="section certifications stack-panel stack-sheet">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Professional Development</span>
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">05 &mdash; Credentials</span>
                 <h2 class="section-title">Certifications</h2>
             </div>
 
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class='bx bx-certification'></i>
-                    </div>
-                    <h3>Diploma in Graphic Design</h3>
-                    <p>Dream Zone, Tiruchirappalli</p>
-                    <span class="cert-year">2020–2022</span>
-                </div>
+            <!-- Enhanced into an auto-scrolling marquee by carousel.js; grid below is the no-JS fallback. -->
+            <div class="carousel-mount" id="certMarquee" data-reveal></div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class='bx bx-shield'></i>
-                    </div>
+            <div class="cert-grid fallback-grid" id="certGrid">
+                <article class="card cert-card" data-reveal data-spotlight>
+                    <div class="card-icon"><i class='bx bx-shield-alt-2'></i></div>
                     <h3>Cybersecurity</h3>
                     <p>SimpliLearn</p>
-                    <span class="cert-year">2022</span>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class='bx bxl-python'></i>
-                    </div>
+                    <span class="chip">2022</span>
+                </article>
+                <article class="card cert-card" data-reveal style="--delay:.06s" data-spotlight>
+                    <div class="card-icon"><i class='bx bxl-python'></i></div>
                     <h3>Programming in Python</h3>
                     <p>SimpliLearn</p>
-                    <span class="cert-year">2022</span>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class='bx bx-code-block'></i>
-                    </div>
+                    <span class="chip">2022</span>
+                </article>
+                <article class="card cert-card" data-reveal style="--delay:.12s" data-spotlight>
+                    <div class="card-icon"><i class='bx bx-code-block'></i></div>
                     <h3>Full Stack Web Development</h3>
                     <p>Udemy</p>
-                    <span class="cert-year">2023</span>
-                </div>
+                    <span class="chip">2023</span>
+                </article>
+                <article class="card cert-card" data-reveal style="--delay:.18s" data-spotlight>
+                    <div class="card-icon"><i class='bx bx-palette'></i></div>
+                    <h3>Diploma in Graphic Design</h3>
+                    <p>Dream Zone, Tiruchirappalli</p>
+                    <span class="chip">2020 &ndash; 2022</span>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Contact -->
+    <section id="contact" class="section contact stack-panel stack-sheet">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Let's Work Together</span>
-                <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">06 &mdash; Contact</span>
+                <h2 class="section-title">Let&rsquo;s build something intelligent</h2>
+                <p class="section-lead">Open to AI/ML engineering roles, consulting and collaboration. I usually reply within a day.</p>
             </div>
 
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class='bx bx-envelope'></i>
+            <div class="contact-grid">
+                <div class="contact-info" data-reveal>
+                    <a class="card contact-card" href="mailto:sugilsanthosh243@gmail.com" data-spotlight>
+                        <div class="card-icon sm"><i class='bx bx-envelope'></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>sugilsanthosh243@gmail.com</p>
                         </div>
-                        <h4>Email</h4>
-                        <a href="mailto:sugilsanthosh243@gmail.com">sugilsanthosh243@gmail.com</a>
-                    </div>
+                        <i class='bx bx-right-arrow-alt arrow'></i>
+                    </a>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class='bx bx-phone'></i>
+                    <a class="card contact-card" href="tel:+918072078586" data-spotlight>
+                        <div class="card-icon sm"><i class='bx bx-phone'></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 80720 78586</p>
                         </div>
-                        <h4>Phone</h4>
-                        <a href="tel:+918072078586">+91 807-207-8586</a>
-                    </div>
+                        <i class='bx bx-right-arrow-alt arrow'></i>
+                    </a>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class='bx bx-map'></i>
+                    <a class="card contact-card" href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" rel="noopener" data-spotlight>
+                        <div class="card-icon sm"><i class='bx bxl-linkedin'></i></div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>in/sugil-s-215711204</p>
                         </div>
-                        <h4>Location</h4>
-                        <p>Tiruchirappalli, India</p>
-                    </div>
+                        <i class='bx bx-right-arrow-alt arrow'></i>
+                    </a>
 
-                    <div class="contact-social">
-                        <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://github.com/sugils" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
-                        <a href="https://sugils.github.io/Sugil-Profile/" target="_blank" title="Portfolio"><i class='bx bx-globe'></i></a>
-                        <a href="mailto:sugilsanthosh243@gmail.com" title="Email"><i class='bx bx-envelope'></i></a>
+                    <a class="card contact-card" href="https://github.com/sugils" target="_blank" rel="noopener" data-spotlight>
+                        <div class="card-icon sm"><i class='bx bxl-github'></i></div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p>github.com/sugils</p>
+                        </div>
+                        <i class='bx bx-right-arrow-alt arrow'></i>
+                    </a>
+
+                    <div class="card contact-card static" data-spotlight>
+                        <div class="card-icon sm"><i class='bx bx-map'></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Tiruchirappalli, India</p>
+                        </div>
                     </div>
                 </div>
 
-                <form id="contact-form" class="contact-form">
+                <form id="contact-form" class="card contact-form" data-reveal style="--delay:.1s">
                     <div class="form-row">
                         <div class="form-group">
-                            <i class='bx bx-user'></i>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
-                            <i class='bx bx-envelope'></i>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <i class='bx bx-message-detail'></i>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
                     </div>
                     <div class="form-group">
-                        <i class='bx bx-message-dots'></i>
-                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell me a little about the project or role..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary btn-block">
                         <i class='bx bx-send'></i> Send Message
                     </button>
-                    <p id="status-message"></p>
+                    <p id="status-message" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-label="Project details">
+        <div class="modal-overlay" onclick="closeProject()"></div>
+        <div class="modal-content project-modal">
+            <div class="pm-hero" id="pmHero">
+                <button class="pm-close" id="pmClose" type="button" onclick="closeProject()" aria-label="Close project details">
+                    <i class='bx bx-x'></i>
+                </button>
+                <p class="pm-category" id="pmCategory"></p>
+                <h3 id="pmTitle"></h3>
+                <p class="pm-role" id="pmRole"><i class='bx bx-been-here'></i><span id="pmRoleText"></span></p>
+            </div>
+            <div class="pm-body">
+                <div class="pm-section">
+                    <h4><i class='bx bx-layer'></i> Technology stack</h4>
+                    <div class="tag-row" id="pmStack"></div>
+                </div>
+                <div class="pm-section">
+                    <h4><i class='bx bx-list-check'></i> What I built</h4>
+                    <ul class="pm-points" id="pmPoints"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Resume Modal -->
-    <div id="resumeModal" class="modal">
+    <div id="resumeModal" class="modal" role="dialog" aria-modal="true" aria-label="Resume preview">
         <div class="modal-overlay" onclick="closeResume()"></div>
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeResume()">
-                <i class='bx bx-x'></i>
-            </button>
-            <iframe src="SUGIL -AI-ML Analyst Resume.pdf" width="100%" height="600px"></iframe>
+        <div class="modal-content resume-viewer" id="resumeViewer">
+            <div class="rv-head">
+                <div class="rv-title">
+                    <span class="rv-doc-icon"><i class='bx bxs-file-pdf'></i></span>
+                    <div class="rv-title-text">
+                        <h3>Sugil S</h3>
+                        <p>AI/ML Engineer &mdash; Resume &middot; PDF</p>
+                    </div>
+                </div>
+                <div class="rv-tools">
+                    <div class="rv-zoom" role="group" aria-label="Zoom">
+                        <button class="rv-btn rv-zoom-btn" id="rvZoomOut" type="button" aria-label="Zoom out"><i class='bx bx-minus'></i></button>
+                        <span class="rv-zoom-level" id="rvZoomLevel">100%</span>
+                        <button class="rv-btn rv-zoom-btn" id="rvZoomIn" type="button" aria-label="Zoom in"><i class='bx bx-plus'></i></button>
+                    </div>
+                    <span class="rv-pages" id="rvPageIndicator" aria-live="polite"></span>
+                    <span class="rv-sep" aria-hidden="true"></span>
+                    <a class="rv-btn" href="SUGIL%20-AI-ML%20Analyst%20Resume.pdf" target="_blank" rel="noopener" aria-label="Open in new tab" title="Open in new tab">
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                    <a class="rv-btn rv-btn-accent" href="SUGIL%20-AI-ML%20Analyst%20Resume.pdf" download aria-label="Download resume" title="Download">
+                        <i class='bx bx-download'></i><span class="rv-btn-label">Download</span>
+                    </a>
+                    <button class="rv-btn" id="rvClose" type="button" onclick="closeResume()" aria-label="Close resume">
+                        <i class='bx bx-x'></i>
+                    </button>
+                </div>
+            </div>
+            <div class="rv-body" id="rvBody" tabindex="0">
+                <div class="rv-loading" id="rvLoading" hidden>
+                    <span class="rv-spinner" aria-hidden="true"></span>
+                    <p>Loading resume&hellip;</p>
+                </div>
+                <div class="rv-pages-wrap" id="rvPagesWrap"></div>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Sugil S. Designed & Built with <i class='bx bx-heart'></i></p>
+    <footer class="footer stack-panel stack-sheet">
+        <div class="container footer-inner">
+            <a href="#home" class="nav-logo">
+                <span class="logo-mark">S</span>
+                <span class="logo-text">Sugil&rsquo;s <em>Portfolio</em></span>
+            </a>
+            <p class="footer-note">AI/ML Engineer &mdash; NLP, Decision Systems &amp; Cloud AI</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/sugil-s-215711204/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/sugils" target="_blank" rel="noopener" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="mailto:sugilsanthosh243@gmail.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Sugil S. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="main.js"></script>
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <svg class="progress-ring" viewBox="0 0 44 44" aria-hidden="true">
+            <circle class="ring-track" cx="22" cy="22" r="20"></circle>
+            <circle class="ring-bar" id="ringBar" cx="22" cy="22" r="20"></circle>
+        </svg>
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <script src="main.js" defer></script>
+    <script src="carousel.js" defer></script>
 </body>
 </html>

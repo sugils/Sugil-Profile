@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Certification marquee — vanilla port of image-auto-slider.tsx
+   (built by carousel.js from the static cert grid)
+
+   A progressive enhancement: the static grid in index.html remains in the
+   DOM as the no-JS fallback, so no content is lost if scripts fail.
+   Built on the Crimson Depth tokens in style.css, so both themes are supported.
+   ========================================================================== */
+
+.carousel-mount { display: none; }
+.js .carousel-mount { display: block; }
+.js .fallback-grid { display: none; }
+
+/* Two duplicated groups slide left by -50% on a linear loop; the mask fades
+   the strip out at both edges. Hover pauses; hovered cards lift slightly. */
+.cert-marquee {
+    overflow: hidden;
+    padding: 14px 0 20px;
+    -webkit-mask: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+
+.cert-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: certScroll 30s linear infinite;
+}
+
+.cert-marquee:hover .cert-marquee-track { animation-play-state: paused; }
+
+.cert-marquee-group { display: flex; gap: 22px; padding-right: 22px; }
+
+@keyframes certScroll { to { transform: translateX(-50%); } }
+
+.cert-m-card {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 26px 24px;
+    border-radius: var(--r-lg);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+
+.cert-m-card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--border-strong);
+}
+
+.cert-m-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--r-md);
+    background: var(--accent-tint);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 22px;
+}
+
+.cert-m-card h4 { font-size: 17px; margin: 14px 0 3px; }
+.cert-m-card p { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+
+/* --------------------------------------------------------------------------
+   Responsive / reduced motion / print
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .cert-m-card { width: 236px; padding: 20px 18px; }
+    .cert-marquee-group { gap: 16px; padding-right: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* No auto-scroll: the strip becomes a normal swipeable row. */
+    .cert-marquee { mask: none; -webkit-mask: none; overflow-x: auto; }
+    .cert-marquee-track { animation: none; width: auto; }
+    .cert-marquee-group[aria-hidden="true"] { display: none; }
+}
+
+@media print {
+    .carousel-mount { display: none !important; }
+    .js .fallback-grid { display: grid !important; }
+}
